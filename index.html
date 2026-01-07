@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Futuristik</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+            <div class="shape shape-6"></div>
+        </div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <div class="container">
+        <div class="calculator-wrapper">
+            <div class="calculator">
+                <div class="header">
+                    <div class="logo-section">
+                        <div class="logo-icon">
+                            <i class="fas fa-calculator"></i>
+                            <div class="pulse-ring"></div>
+                        </div>
+                        <div class="title-section">
+                            <h1>QUANTUM CALC</h1>
+                            <span class="subtitle">Advanced Computing System</span>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button id="themeToggle" class="control-btn theme-btn">
+                            <i class="fas fa-moon"></i>
+                            <span class="btn-glow"></span>
+                        </button>
+                        <button id="settingsBtn" class="control-btn settings-btn">
+                            <i class="fas fa-cog"></i>
+                            <span class="btn-glow"></span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="display-section">
+                    <div class="display-container">
+                        <div class="display-frame">
+                            <div class="scan-line"></div>
+                            <div class="display-content">
+                                <div class="previous-operand" id="previousOperand"></div>
+                                <div class="current-operand" id="currentOperand">0</div>
+                                <div class="cursor-blink"></div>
+                            </div>
+                            <div class="display-corners">
+                                <div class="corner corner-tl"></div>
+                                <div class="corner corner-tr"></div>
+                                <div class="corner corner-bl"></div>
+                                <div class="corner corner-br"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttons-section">
+                    <div class="buttons-grid">
+                        <!-- Row 1 -->
+                        <button class="btn function-btn neon-btn" data-action="clear">
+                            <span class="btn-text">AC</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn function-btn neon-btn" data-action="delete">
+                            <span class="btn-text"><i class="fas fa-backspace"></i></span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn function-btn neon-btn" data-action="percent">
+                            <span class="btn-text">%</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn operator-btn neon-btn" data-operator="/">
+                            <span class="btn-text">÷</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+
+                        <!-- Row 2 -->
+                        <button class="btn number-btn neon-btn" data-number="7">
+                            <span class="btn-text">7</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn number-btn neon-btn" data-number="8">
+                            <span class="btn-text">8</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn number-btn neon-btn" data-number="9">
+                            <span class="btn-text">9</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn operator-btn neon-btn" data-operator="*">
+                            <span class="btn-text">×</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+
+                        <!-- Row 3 -->
+                        <button class="btn number-btn neon-btn" data-number="4">
+                            <span class="btn-text">4</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn number-btn neon-btn" data-number="5">
+                            <span class="btn-text">5</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn number-btn neon-btn" data-number="6">
+                            <span class="btn-text">6</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn operator-btn neon-btn" data-operator="-">
+                            <span class="btn-text">−</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+
+                        <!-- Row 4 -->
+                        <button class="btn number-btn neon-btn" data-number="1">
+                            <span class="btn-text">1</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn number-btn neon-btn" data-number="2">
+                            <span class="btn-text">2</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn number-btn neon-btn" data-number="3">
+                            <span class="btn-text">3</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn operator-btn neon-btn" data-operator="+">
+                            <span class="btn-text">+</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+
+                        <!-- Row 5 -->
+                        <button class="btn function-btn neon-btn" data-action="sqrt">
+                            <span class="btn-text">√</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn number-btn neon-btn zero-btn" data-number="0">
+                            <span class="btn-text">0</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn function-btn neon-btn" data-action="decimal">
+                            <span class="btn-text">.</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                        <button class="btn equals-btn neon-btn" data-action="equals">
+                            <span class="btn-text">=</span>
+                            <div class="btn-bg"></div>
+                            <div class="btn-particles"></div>
+                        </button>
+                    </div>
+
+                    <div class="advanced-functions">
+                        <div class="advanced-header">
+                            <span>ADVANCED FUNCTIONS</span>
+                            <div class="header-line"></div>
+                        </div>
+                        <div class="advanced-grid">
+                            <button class="btn advanced-btn neon-btn" data-action="sin">
+                                <span class="btn-text">sin</span>
+                                <div class="btn-bg"></div>
+                            </button>
+                            <button class="btn advanced-btn neon-btn" data-action="cos">
+                                <span class="btn-text">cos</span>
+                                <div class="btn-bg"></div>
+                            </button>
+                            <button class="btn advanced-btn neon-btn" data-action="tan">
+                                <span class="btn-text">tan</span>
+                                <div class="btn-bg"></div>
+                            </button>
+                            <button class="btn advanced-btn neon-btn" data-action="log">
+                                <span class="btn-text">log</span>
+                                <div class="btn-bg"></div>
+                            </button>
+                            <button class="btn advanced-btn neon-btn" data-action="ln">
+                                <span class="btn-text">ln</span>
+                                <div class="btn-bg"></div>
+                            </button>
+                            <button class="btn advanced-btn neon-btn" data-action="power">
+                                <span class="btn-text">x²</span>
+                                <div class="btn-bg"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fas fa-database"></i>
+                        <span>QUANTUM MEMORY</span>
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <span>ACTIVE</span>
+                        </div>
+                    </div>
+                    <div class="panel-controls">
+                        <button id="clearHistory" class="panel-btn">
+                            <i class="fas fa-trash-alt"></i>
+                            <span class="btn-tooltip">Clear Memory</span>
+                        </button>
+                        <button id="exportHistory" class="panel-btn">
+                            <i class="fas fa-download"></i>
+                            <span class="btn-tooltip">Export Data</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="memory-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Calculations</span>
+                        <span class="stat-value" id="totalCalcs">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Today</span>
+                        <span class="stat-value" id="todayCalcs">0</span>
+                    </div>
+                </div>
+
+                <div class="history-container">
+                    <div class="history-list" id="historyList">
+                        <!-- History items will be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particle System -->
+    <canvas id="particleCanvas"></canvas>
+
+    <script src="database.js"></script>
+    <script src="calculator.js"></script>
+    <script src="particles.js"></script>
+</body>
+</html>
